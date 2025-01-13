@@ -1,0 +1,45 @@
+import UIKit
+
+var greeting = "Hello, playground"
+print(greeting)
+
+//creating a data type 'medication', and then defining the different properties of the medication  by defining what type of variable each is.
+struct Medication {
+    let date: String
+    let medname: String
+    let dose: Double
+    let route: String
+    let frequency: String
+    let duration: Double
+    
+    func printMedication() {
+        print("\(medname) \(dose) mg \(route) \(frequency) for \(duration) days")
+    }
+    //should come out like: Metoprolol 25 mg by mouth once daily for 90 days
+}
+//example
+let metoprolol = Medication(date: "January 5th, 2000", medname: "Metoprolol", dose: 25, route: "by mouth", frequency: "once daily", duration: 90)
+metoprolol.printMedication()
+
+//creating a blood type data type
+enum BloodType: String {
+    case Apositive
+    case Anegative
+    case Bpositive
+    case Bnegative
+    case Opositive
+    case Onegative
+    case ABpositive
+    case ABnegative
+    }
+
+class Patient {
+    let name: String
+    let age: Int
+    let bloodType: BloodType
+    init(name: String, age: Int, bloodType: BloodType) {
+        self.name = name
+        self.age = age
+        self.bloodType = bloodType
+        }
+}
